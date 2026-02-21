@@ -249,8 +249,6 @@ main img {
 @media (max-width: 550px) {
   main {
     grid-template-columns: 1fr;
-    padding: 76px 16px 0px 92px;
-    /* Weniger Padding Mobile */
   }
 }
 @media (min-width: 551px) and (max-width: 850px) {
