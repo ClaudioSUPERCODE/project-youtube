@@ -1,0 +1,270 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, Arial;
+  background-color: rgb(249, 249, 249);
+  position: relative;
+}
+
+img:hover,
+button:hover {
+  cursor: pointer;
+}
+
+.icons {
+  width: 24px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  /* Nach Klick */
+  color: black;
+}
+a:hover {
+  /* Mouse drüber */
+  color: black;
+}
+a:active {
+  /* Bei Klick */
+  color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  z-index: 2;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1.5px solid rgb(222, 222, 222);
+}
+header .head-container1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .head-container1 img:nth-of-type(1) {
+  margin: 0px 24px;
+}
+header .head-container1 .yt-logo {
+  width: 90px;
+  margin-right: 20px;
+}
+header .head-container2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .head-container2 .searchbar {
+  height: 36px;
+  width: 342px;
+  font-size: 16px;
+  border: 1px solid rgb(204, 204, 204);
+  box-shadow: rgb(238, 238, 238) 0px 1px 2px;
+  border-radius: 2px;
+  padding-left: 12px;
+}
+header .head-container2 .searchbar:focus {
+  border: 1px solid rgb(22, 22, 22);
+  outline: none;
+}
+header .head-container2 button {
+  height: 36px;
+  width: 61px;
+  margin-right: 8px;
+  border: 1px solid rgb(204, 204, 204);
+  border-left: none;
+  background-color: rgb(247, 247, 247);
+  border-radius: 2px;
+}
+header .head-container2 button:nth-of-type(2) {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border-style: none;
+  background-color: rgb(248, 248, 248);
+}
+header .head-container3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 182px !important;
+  flex-shrink: 0 !important;
+  margin: 0px 24px;
+}
+header .head-container3 .user-profile-pic {
+  width: 40px;
+  border-radius: 20px;
+}
+
+.icon-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.icon-tooltip::after {
+  content: "search with your voice";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(51, 51, 51, 0.6392156863);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 12px;
+}
+.icon-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.notification-container {
+  position: relative;
+}
+.notification-container p {
+  position: absolute;
+  top: -4px;
+  right: -9.5px;
+  font-size: 10px;
+  background-color: rgb(204, 0, 0);
+  text-align: center;
+  color: white;
+  border-radius: 19px;
+  border: 2px solid white;
+  padding: 2px 6px;
+}
+
+nav {
+  width: 72px;
+  position: fixed;
+  top: 45px;
+  margin-top: 10px;
+  height: 100vh;
+  background-color: white;
+  z-index: 3;
+}
+nav div {
+  text-align: center;
+  font-size: 10px;
+  height: 74px;
+}
+nav div img {
+  margin-bottom: 6.5px;
+}
+
+.nav-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nav-icon-container:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+main {
+  width: 100%;
+  padding: 20px 20px 0px 92px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute;
+  top: 56px;
+  z-index: 0;
+}
+main img {
+  width: 100%;
+}
+
+.thumbnail-container {
+  position: relative;
+}
+
+.video-duration {
+  position: absolute;
+  right: 10px;
+  bottom: 13px;
+  color: white;
+  background-color: black;
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.video-info .video-author-profilepic {
+  width: 36px !important;
+  /* ← FIXED: Immer 36px breit */
+  height: 36px !important;
+  /* ← FIXED: Immer 36px hoch  */
+  flex-shrink: 0 !important;
+  /* ← FIXED: Wird nie kleiner */
+}
+.video-info .video-author-profilepic img {
+  border-radius: 18px;
+}
+.video-info .video-description {
+  margin-left: 20px;
+}
+.video-info .video-description .video-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.video-info .video-description .channel-name {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+  margin-top: 10px;
+}
+.video-info .video-description .views-count {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 550px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 76px 16px 0px 92px;
+    /* Weniger Padding Mobile */
+  }
+}
+@media (min-width: 551px) and (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 851px) and (max-width: 1150px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1151px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */
